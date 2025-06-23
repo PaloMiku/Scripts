@@ -12,7 +12,7 @@ zen_nospam() {
   zenity 2> >(grep -v 'Gtk' >&2) "$@"
 }
 
-if ! zen_nospam --question --title="$PROJECT_NAME 游戏 Wine 补丁辅助安装程序" --width=500 --text="欢迎使用 $PROJECT_NAME 游戏 Wine 补丁安装程序。\n\n注意：本安装程序并非游戏开发商或发行商提供 \n\n此脚本将从 VnWiki 下载补丁文件并将其安装到游戏目录中。\n\n请在下一个弹出窗口选择您的游戏本地存储目录。 \n\n请问是否继续下载安装？"; then
+if ! zen_nospam --question --title="$PROJECT_NAME Wine 运行补丁安装程序" --width=500 --text="欢迎使用 $PROJECT_NAME Wine 补丁安装程序。\n\n注意：本安装程序并非游戏开发商或发行商提供 \n\n此脚本将从 VnWiki 下载补丁文件并将其安装到游戏目录中。\n\n请在下一个弹出窗口选择您的游戏本地存储目录。 \n\n请问是否继续下载安装？"; then
     exit 0
 fi
 
