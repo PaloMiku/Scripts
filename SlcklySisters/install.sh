@@ -17,9 +17,13 @@ if ! zen_nospam --question --title="$PROJECT_NAME Wine 运行补丁安装程序"
 fi
 
 
-INSTALL_DIR=$(zen_nospam --file-selection --directory --title="请选择安装目录" --filename="${INSTALL_DIR_DEFAULT}/")
-if [ $? -ne 0 ]; then
-    exit 0
+if zen_nospam --question --title="安装类型选择" --width=400 --text="是否为 Steam 版本安装？\n\n选择“是”将自动安装到 Steam 游戏目录。\n选择“否”可手动选择目录。"; then
+    INSTALL_DIR="/home/$USER/.local/share/Steam/steamapps/common/Sickly Days and Summer Traces"
+else
+    INSTALL_DIR=$(zen_nospam --file-selection --directory --title="请选择安装目录" --filename="${INSTALL_DIR_DEFAULT}/")
+    if [ $? -ne 0 ]; then
+        exit 0
+    fi
 fi
 
 
