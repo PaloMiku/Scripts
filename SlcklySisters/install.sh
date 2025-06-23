@@ -12,7 +12,7 @@ zen_nospam() {
   zenity 2> >(grep -v 'Gtk' >&2) "$@"
 }
 
-if ! zen_nospam --question --title="$PROJECT_NAME 游戏补丁辅助安装程序" --width=500 --text="欢迎使用 $PROJECT_NAME 安装程序。\n\n此脚本将从VnWiki下载补丁文件:\n<b>$DOWNLOAD_URL</b>\n\n并将其安装到游戏目录中。\n\n请在下一个弹出窗口选择您的游戏本地存储目录。"; then
+if ! zen_nospam --question --title="$PROJECT_NAME 游戏补丁辅助安装程序" --width=500 --text="欢迎使用 $PROJECT_NAME 游戏补丁安装程序（非官方）。\n\n此脚本将从VnWiki下载补丁文件:\n<b>$DOWNLOAD_URL</b>\n\n并将其安装到游戏目录中。\n\n请在下一个弹出窗口选择您的游戏本地存储目录。"; then
     exit 0
 fi
 
